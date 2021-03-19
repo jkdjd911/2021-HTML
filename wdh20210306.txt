@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/
+TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title></title>
+</head>
+<body>
+<script>
+//检查用户名
+function checknumber()
+{
+	var number = document.getElementById("number").value;//获取学号
+	var flag = number.checkValidity();
+	if(flag)
+	{
+		result.innerHTML = '用户名格式正确'
+	}
+	else
+	{
+		result.innerHTML = '输入用户名请包含英文和数字，且长度大于6位'
+	}
+}
+//注册方法
+function reg()
+{
+	var username = document.getElementById("username").value;//获取用户名
+	var email = document.getElementById("email").value;//获取电子邮箱
+	var number = document.getElementById("number").value;//获取学号
+	if(document.getElementById("username").checkValidity()//判断用户名是否通过校验-包含中英文且长度大于6位
+	  &&document.getElementById("email").checkValidity()//判断电子邮箱是否通过校验-格式正确
+	  &&document.getElementById("number").checkValidity()//判断学号是否通过校验-只包含数字
+	)
+	{
+		alert(
+			'确认注册信息\n'+
+			'用户名：'+username+'\n'+
+			'电子邮箱：'+email+'\n'+
+			'学号：'+number+'\n'
+		)	
+	}
+}
+</script>
+<form>
+<fieldset>
+<legend>校园网注册页面</legend>
+<center>
+<div style="padding:5px;width=600px">
+	<h4>校园网注册用户信息</h4>
+	<table width='100%'>
+		<tr>
+			<td width='20%'>用户名</td>
+			<td width='40%'><input id="username" type="text" required="true" onblur="checknumber()"pattern ="^[0-9a-zA-Z]{6,}$"/></td>
+			<td width='40%'><font color="red">*</font></td>
+		</tr>
+		<tr>
+			<td>电子邮箱</td>
+			<td><input id="email" type="email" required="true"/></td>
+			<td><font color="red">*</font></td>
+		</tr>      
+        <tr>
+			<td>学号</td>
+			<td><input id="number" type="number" required="true"/></td>
+			<td><font color="red">*</font></td>
+		</tr>
+	</table>
+</div>
+<input type="submit" value="注册新用户" onclick="reg()">
+<input type="reset" value="重置">
+</center>
+</fieldset>
+</form>
+</body>
+</html>
