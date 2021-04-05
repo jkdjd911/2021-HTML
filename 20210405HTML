@@ -1,0 +1,90 @@
+//运行前删除此行备注20210405
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+img {
+  opacity: 0.5;
+}
+
+p {outline-color:red;}
+p.dotted {outline-style: dotted;}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#rcorners1 {
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+
+#example1 {
+  background-image: url(/i/photo/flower.gif), url(/i/paper.jpg);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  padding: 15px;
+}
+
+#p1 {background-color:rgba(255,0,0,0.3);}
+#p2 {background-color:rgba(0,255,0,0.3);}
+#p3 {background-color:rgba(0,0,255,0.3);}
+#p4 {background-color:rgba(192,192,192,0.3);}
+#p5 {background-color:rgba(255,255,0,0.3);}
+#p6 {background-color:rgba(255,0,255,0.3);}
+
+</style>
+</head>
+<body>
+
+<h1>HTML小练习</h1>
+
+<p>《中级》点状轮廓+图像透明度+下拉菜单。</p>
+
+<p class="dotted">点状轮廓</p>
+
+<img src="/i/photo/tulip-red.jpg" alt="Tulip" width="600" height="400">
+
+<div class="dropdown">
+  <span>把鼠标移到我上面</span>
+  <div class="dropdown-content">
+  <p>Hello World!</p>
+  </div>
+</div>
+
+<p>《高级》圆角边框+多重背景+RGB颜色</p>
+<p id="rcorners1">圆角边框!</p>
+
+<div id="example1">
+  <h1>Welcome to Shanghai</h1>
+  <p>武汉纺织大学欢迎您！</p>
+</div>
+
+<p id="p1">Red</p>
+<p id="p2">Green</p>
+<p id="p3">Blue</p>
+<p id="p4">Grey</p>
+<p id="p5">Yellow</p>
+<p id="p6">Cerise</p>
+
+</body>
+</html>
